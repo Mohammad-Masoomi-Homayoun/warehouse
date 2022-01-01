@@ -1,5 +1,14 @@
-FROM openjdk:11
-
-COPY ./target/warehouse.jar /opt/app.jar
-WORKDIR /opt
-ENTRYPOINT["java", "-jar", "app.jar"]
+apiVersion: v1
+kind: Service
+metadata:
+  name: warehouse
+  labels:
+    app: warehouse
+spec:
+  selector:
+    app: warehouse
+  ports:
+    - name: "http"
+      port: 9020
+      targetPort: 31100
+  type: NodePort

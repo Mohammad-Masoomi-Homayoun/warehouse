@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: warehouse
+  labels:
+    app: warehouse
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: warehouse
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: warehouse
+    spec:
+      containers:
+        - image: enmasoomi/warehouse:1.0.0
+          name: warehouse
+          args: ['--server.port=9020']
+          ports:
+            - containerPort: 9020
+      restartPolicy: Always
