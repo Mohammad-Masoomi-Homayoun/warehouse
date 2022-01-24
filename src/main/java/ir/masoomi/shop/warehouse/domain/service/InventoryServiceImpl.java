@@ -18,4 +18,10 @@ public class InventoryServiceImpl implements InventoryService {
     return inventoryRepository.findAll();
   }
 
+  @Override
+  public Article postArticle(Article article) {
+
+    return inventoryRepository.save(article);
+  }
+
 }
