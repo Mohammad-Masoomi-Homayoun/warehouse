@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>ir.masoomi.shop</groupId>
     <artifactId>warehouse</artifactId>
@@ -14,25 +14,29 @@
     <name>warehouse</name>
     <description>This is a warehouse as a part of shop</description>
     <packaging>jar</packaging>
+
     <properties>
         <java.version>11</java.version>
+        <oracle-driver.version>21.3.0.0</oracle-driver.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
         </dependency>
         <dependency>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
             <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <groupId>org.springframework.boot</groupId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>${oracle-driver.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
