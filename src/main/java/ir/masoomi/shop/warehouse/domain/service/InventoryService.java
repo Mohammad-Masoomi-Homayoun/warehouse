@@ -9,4 +9,5 @@ public interface InventoryService {
 
   List<Article> getArticles();
 
+  Article postArticle(Article article);
 }
