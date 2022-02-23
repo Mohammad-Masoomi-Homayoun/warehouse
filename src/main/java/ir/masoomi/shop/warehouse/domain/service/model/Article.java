@@ -25,4 +25,9 @@ public class Article {
     private String name;
     private int count;
     private int price;
+
+    @Override
+    public String toString() {
+        return "ID: " + this.id + ", Name: " + this.name + ", Count: " + this.count + ", Price: " + this.price;
+    }
 }
